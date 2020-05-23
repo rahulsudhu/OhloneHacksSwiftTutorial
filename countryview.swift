@@ -12,12 +12,12 @@ struct countryview: View {
     let country: Cntry
     var body: some View {
         VStack {
-            Text(country.name).font(.largeTitle).padding(100)
-            Text("\(country.totalCases)").foregroundColor(.blue)
+            Text(country.name).font(.largeTitle).fontWeight(.heavy).padding(.bottom, 100)
+            Text("\(country.totalCases)").fontWeight(.bold).foregroundColor(.blue).font(.title)
             Text("Total Cases")
-            Text("\(country.deceased)").foregroundColor(.red)
+            Text("\(country.deceased)").fontWeight(.bold).foregroundColor(.red).padding(.top, 25).font(.title)
             Text("Total Deceased")
-            Text("\(country.recovered)").foregroundColor(.green)
+            Text("\(country.recovered)").fontWeight(.bold).foregroundColor(.green).padding(.top, 25).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             Text("Total Recovered")
         }
     }

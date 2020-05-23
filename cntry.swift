@@ -17,10 +17,19 @@ struct Cntry : Identifiable {
     
 }
 
+struct Country: Codable {
+    var name: String
+    var totalCases: Int
+    var deceased: Int
+    var recovered: Int
+}
+
+
 
 let testData = [
     Cntry(name: "Global", totalCases: 1581903, deceased: 300000, recovered: 20000000),
     Cntry(name: "USA", totalCases: 1581903, deceased: 300000, recovered: 20000000),
     Cntry(name: "China", totalCases: 1581903, deceased: 300000, recovered: 20000000),
     Cntry(name: "Canada", totalCases: 1581903, deceased: 300000, recovered: 20000000),
+    Cntry(name: "Mexico", totalCases: 1581903, deceased: 300000, recovered: 20000000),
 ]

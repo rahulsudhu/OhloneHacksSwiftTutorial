@@ -9,23 +9,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    var countryOptions: [Cntry] = []
+    var countryOptions: [Cntry] = testData
 
     
     var body: some View {
-        NavigationView {
-            List(countryOptions) { country in
-                CountryCell(country: country)
-            }.onAppear(perform: loadData)
-            .navigationBarTitle(Text("Covid-19 Tracker").font(.largeTitle))
+        VStack {
+            Text("COVID-19 Tracker").font(.largeTitle).fontWeight(.bold)
+            NavigationView {
+                List(countryOptions) { country in
+                    CountryCell(country: country)
+                }
+                .navigationBarTitle(Text("Countries")
+                )
+            }
         }
-    
     }
-    
-    func loadData() {
-        
-    }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -38,7 +36,11 @@ struct CountryCell: View {
     let country: Cntry
     var body: some View {
         NavigationLink(destination: countryview(country: country)) {
+            if (country.name == "Global") {
+                Image(systemName: "globe")
+            } else {
             Image(systemName: "flag")
+            }
             Text(country.name)
         }
     }
